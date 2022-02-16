@@ -1,0 +1,30 @@
+body{
+	font-family: Arial;
+	font-size: 80%;
+}
+
+#wrapper{
+	width: 80%;
+	margin: 20px auto 0;
+}
+
+#header label{
+	display: block;
+	margin-top: 10px;
+}
+
+#header label span{
+	width: 150px;
+	display: inline-block;
+}
+
+#header .submit{
+	margin-top: 40px;
+}
+th {
+    border: 2px splid black;
+}
+.Submit{
+    padding: 20% 40%;
+    color: black;
+}
