@@ -50,10 +50,29 @@ function update(x) {
 		}
 	}
 }
-
+function increace(x){
+	for (var i = 0; i < globalArray.length; i++) {
+		if (globalArray[i].id == x) {
+			globalArray[i].quantity++;
+			globalArray[i].totalPrice =globalArray[i].price*globalArray[i].quantity;
+			display();
+			
+		}
+	}
+}
+function decreace(y){
+	for (var i = 0; i < globalArray.length; i++) {
+		if (globalArray[i].id == y) {
+			globalArray[i].quantity--;
+			globalArray[i].totalPrice =globalArray[i].price*globalArray[i].quantity;
+			display();
+			
+		}
+	}
+}
 function display() {
 	var dis =
-		'<table><tr><th>Id</th><th>Name</th><th>Price</th><th>Quantity</th><th>total price</th><th>enter new quantity </th><th>update</th></tr>';
+		'<table><tr><th>Id</th><th>Name</th><th>Price</th><th>Quantity</th><th>total price</th><th>add</th><th>sub</th><th>enter new quantity </th><th>update</th></tr>';
 	for (var i = 0; i < globalArray.length; i++) {
 		dis +=
 			'<tr><td>' +
@@ -66,11 +85,15 @@ function display() {
 			globalArray[i].quantity +
 			'</td><td>' +
 			globalArray[i].totalPrice +
-			'</td><td><input type="text" id="update' +
+			'</td><td><button class="Submit" id="btn" value="update" onclick="increace(' +
+			parseInt(globalArray[i].id) +
+			')">+</button></td><td><button class="Submit" id="btn" value="update" onclick="decreace(' +
+			parseInt(globalArray[i].id) +
+			')">-</button></td><td><input type="text" id="update' +
 			[ i ] +
 			'"></td><td><button class="Submit" id="btn" value="update" onclick="update(' +
 			parseInt(globalArray[i].id) +
-			')"</button></td></tr>';
+			')">update</button></td></tr>';
 	}
 
 	dis += '</table>';
